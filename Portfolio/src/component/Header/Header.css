@@ -1,0 +1,121 @@
+nav {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-right: 1rem;
+}
+
+.h1 {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 2rem;
+}
+
+.h1:hover {
+  color: #ccc;
+}
+
+/* Add animation to the logo */
+.h1:hover span {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add underline animation to the menu items on hover */
+li a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  padding-bottom: 3px;
+}
+
+li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Add social media icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  margin-right: 1rem;
+}
+
+.social-icon a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.social-icon a:hover {
+  color: #ccc;
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  ul {
+    margin-top: 1rem;
+  }
+  
+  li {
+    margin-right: 0.5rem;
+  }
+  
+  .h1 {
+    font-size: 1.5rem;
+  }
+  
+  .social-icon a {
+    font-size: 1.2rem;
+  }
+}
